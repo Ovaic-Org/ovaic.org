@@ -47,22 +47,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="en">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>I apply as</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> an organisation</label>
+<label class="check"><input type="radio" name="kind" value="individual"> an individual (short form)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organisation</legend>
-<label>Legal name *<input type="text" name="org" required></label><label>Legal form *<input type="text" name="legal_form" required></label><label>Country *<input type="text" name="country" required></label><label>Seat (city) *<input type="text" name="city" required></label><label>Register number <span class="muted">(optional)</span><input type="text" name="uid"></label><label>Website *<input type="url" name="web" required></label>
+<label class="org-only">Legal name *<input type="text" name="org" required></label><label class="org-only">Legal form *<input type="text" name="legal_form" required></label><label>Country *<input type="text" name="country" required></label><label>Seat (city) *<input type="text" name="city" required></label><label class="org-only">Register number <span class="muted">(optional)</span><input type="text" name="uid"></label><label class="org-only">Website *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Representative</legend>
-<label>Full name *<input type="text" name="name" required></label><label>Role in the organisation *<input type="text" name="role" required></label><label>Email *<input type="email" name="email" required></label><label>Phone <span class="muted">(optional)</span><input type="tel" name="phone"></label>
+<label>Full name *<input type="text" name="name" required></label><label class="org-only">Role in the organisation *<input type="text" name="role" required></label><label>Email *<input type="email" name="email" required></label><label>Phone <span class="muted">(optional)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Membership</legend>
-<label>Category *<select name="category" required><option value="member">Member (organisation, with vote)</option><option value="observer">Observer (individual or body, without vote)</option></select></label>
-<label>Size and annual fee (CHF) *<select name="size" required><option value="0">Individual (observer): 100</option><option value="1">Up to 5 staff, non profit, university: 300</option><option value="2">6 to 19 staff: 800</option><option value="3">20 to 49 staff: 1,500</option><option value="4">50 to 249 staff: 3,000</option><option value="5">250 to 999 staff: 5,000</option><option value="6">Strategic member, 1,000 to 9,999 staff: 50,000</option><option value="7">Strategic member, 10,000 staff or more: from 100,000, by agreement</option></select></label>
+<label class="org-only">Category *<select name="category" required><option value="member">Member (organisation, with vote)</option><option value="observer">Observer (individual or body, without vote)</option></select></label>
+<label class="org-only">Size and annual fee (CHF) *<select name="size" required><option value="0">Individual (observer): 100</option><option value="1">Up to 5 staff, non profit, university: 300</option><option value="2">6 to 19 staff: 800</option><option value="3">20 to 49 staff: 1,500</option><option value="4">50 to 249 staff: 3,000</option><option value="5">250 to 999 staff: 5,000</option><option value="6">Strategic member, 1,000 to 9,999 staff: 50,000</option><option value="7">Strategic member, 10,000 staff or more: from 100,000, by agreement</option></select></label>
 <p class="muted">No money for the fee? Apply all the same. In the last field, describe your voluntary, professional or creative contribution, or simply ask for support. The Board considers every application seriously.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> We would also like to be a supporting member (from CHF 20,000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> We ask for a reduced fee (please explain below)</label>
 </fieldset>
 <fieldset><legend>Work and declarations</legend>
-<label>What you work on *<textarea name="work" rows="3" required></textarea></label><label>Products and methods to declare *<textarea name="products" rows="3" required></textarea></label><label>Beneficial owners with 25 % or more, or who control the organisation *<textarea name="owners" rows="3" required></textarea></label><label>Relationships with other members or with the initiator (owners, directors, funding, contracts), or &quot;none&quot; *<textarea name="relations" rows="3" required></textarea></label><label>A test case you would bring <span class="muted">(optional)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>What you work on *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Products and methods to declare *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Beneficial owners with 25 % or more, or who control the organisation *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Relationships with other members or with the initiator (owners, directors, funding, contracts), or &quot;none&quot; *<textarea name="relations" rows="3" required></textarea></label><label>A test case you would bring <span class="muted">(optional)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Preferred way to pay <span class="muted">(optional)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU on Ethereum)</option><option value="1">Bank transfer, once the account is open</option><option value="2">Bitcoin, once available</option><option value="3">PayPal</option></select></label>
 <label>Anything else <span class="muted">(optional)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -73,6 +77,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

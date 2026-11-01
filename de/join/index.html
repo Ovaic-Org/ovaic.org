@@ -47,22 +47,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="de">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Ich bewerbe mich als</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> Organisation</label>
+<label class="check"><input type="radio" name="kind" value="individual"> Einzelperson (kurzes Formular)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organisation</legend>
-<label>Rechtlicher Name *<input type="text" name="org" required></label><label>Rechtsform *<input type="text" name="legal_form" required></label><label>Land *<input type="text" name="country" required></label><label>Sitz (Ort) *<input type="text" name="city" required></label><label>Registernummer (UID) <span class="muted">(freiwillig)</span><input type="text" name="uid"></label><label>Website *<input type="url" name="web" required></label>
+<label class="org-only">Rechtlicher Name *<input type="text" name="org" required></label><label class="org-only">Rechtsform *<input type="text" name="legal_form" required></label><label>Land *<input type="text" name="country" required></label><label>Sitz (Ort) *<input type="text" name="city" required></label><label class="org-only">Registernummer (UID) <span class="muted">(freiwillig)</span><input type="text" name="uid"></label><label class="org-only">Website *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Vertretung</legend>
-<label>Vor- und Nachname *<input type="text" name="name" required></label><label>Funktion in der Organisation *<input type="text" name="role" required></label><label>E-Mail *<input type="email" name="email" required></label><label>Telefon <span class="muted">(freiwillig)</span><input type="tel" name="phone"></label>
+<label>Vor- und Nachname *<input type="text" name="name" required></label><label class="org-only">Funktion in der Organisation *<input type="text" name="role" required></label><label>E-Mail *<input type="email" name="email" required></label><label>Telefon <span class="muted">(freiwillig)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Mitgliedschaft</legend>
-<label>Kategorie *<select name="category" required><option value="member">Mitglied (Organisation, mit Stimmrecht)</option><option value="observer">Beobachter (Person oder Stelle, ohne Stimmrecht)</option></select></label>
-<label>Grösse und Jahresbeitrag (CHF) *<select name="size" required><option value="0">Einzelperson (Beobachter): 100</option><option value="1">Bis 5 Mitarbeitende, gemeinnützig, Hochschule: 300</option><option value="2">6 bis 19 Mitarbeitende: 800</option><option value="3">20 bis 49 Mitarbeitende: 1&#x27;500</option><option value="4">50 bis 249 Mitarbeitende: 3&#x27;000</option><option value="5">250 bis 999 Mitarbeitende: 5&#x27;000</option><option value="6">Strategisches Mitglied, 1&#x27;000 bis 9&#x27;999 Mitarbeitende: 50&#x27;000</option><option value="7">Strategisches Mitglied, ab 10&#x27;000 Mitarbeitenden: ab 100&#x27;000, nach Vereinbarung</option></select></label>
+<label class="org-only">Kategorie *<select name="category" required><option value="member">Mitglied (Organisation, mit Stimmrecht)</option><option value="observer">Beobachter (Person oder Stelle, ohne Stimmrecht)</option></select></label>
+<label class="org-only">Grösse und Jahresbeitrag (CHF) *<select name="size" required><option value="0">Einzelperson (Beobachter): 100</option><option value="1">Bis 5 Mitarbeitende, gemeinnützig, Hochschule: 300</option><option value="2">6 bis 19 Mitarbeitende: 800</option><option value="3">20 bis 49 Mitarbeitende: 1&#x27;500</option><option value="4">50 bis 249 Mitarbeitende: 3&#x27;000</option><option value="5">250 bis 999 Mitarbeitende: 5&#x27;000</option><option value="6">Strategisches Mitglied, 1&#x27;000 bis 9&#x27;999 Mitarbeitende: 50&#x27;000</option><option value="7">Strategisches Mitglied, ab 10&#x27;000 Mitarbeitenden: ab 100&#x27;000, nach Vereinbarung</option></select></label>
 <p class="muted">Kein Geld für den Beitrag? Bewerben Sie sich trotzdem. Beschreiben Sie im letzten Feld Ihren freiwilligen, beruflichen oder schöpferischen Beitrag, oder bitten Sie einfach um Unterstützung. Der Vorstand prüft jede Bewerbung ernsthaft.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Wir möchten zusätzlich Fördermitglied werden (ab CHF 20&#x27;000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Wir beantragen einen reduzierten Beitrag (bitte unten begründen)</label>
 </fieldset>
 <fieldset><legend>Tätigkeit und Erklärungen</legend>
-<label>Woran Sie arbeiten *<textarea name="work" rows="3" required></textarea></label><label>Offenzulegende Produkte und Methoden *<textarea name="products" rows="3" required></textarea></label><label>Wirtschaftlich Berechtigte mit 25 % oder mehr oder mit Kontrolle über die Organisation *<textarea name="owners" rows="3" required></textarea></label><label>Beziehungen zu anderen Mitgliedern oder zum Initianten (Eigentümer, Organe, Finanzierung, Verträge), oder &quot;keine&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Ein Testfall, den Sie einbringen würden <span class="muted">(freiwillig)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Woran Sie arbeiten *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Offenzulegende Produkte und Methoden *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Wirtschaftlich Berechtigte mit 25 % oder mehr oder mit Kontrolle über die Organisation *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Beziehungen zu anderen Mitgliedern oder zum Initianten (Eigentümer, Organe, Finanzierung, Verträge), oder &quot;keine&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Ein Testfall, den Sie einbringen würden <span class="muted">(freiwillig)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Bevorzugte Zahlungsart <span class="muted">(freiwillig)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU auf Ethereum)</option><option value="1">Banküberweisung, sobald das Konto eröffnet ist</option><option value="2">Bitcoin, sobald verfügbar</option><option value="3">PayPal</option></select></label>
 <label>Weiteres <span class="muted">(freiwillig)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -73,6 +77,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

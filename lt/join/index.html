@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="lt">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Teikiu paraišką kaip</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organizacija</label>
+<label class="check"><input type="radio" name="kind" value="individual"> privatus asmuo (trumpa forma)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organizacija</legend>
-<label>Teisinis pavadinimas *<input type="text" name="org" required></label><label>Teisinė forma *<input type="text" name="legal_form" required></label><label>Šalis *<input type="text" name="country" required></label><label>Buveinė (miestas) *<input type="text" name="city" required></label><label>Registracijos numeris <span class="muted">(neprivaloma)</span><input type="text" name="uid"></label><label>Svetainė *<input type="url" name="web" required></label>
+<label class="org-only">Teisinis pavadinimas *<input type="text" name="org" required></label><label class="org-only">Teisinė forma *<input type="text" name="legal_form" required></label><label>Šalis *<input type="text" name="country" required></label><label>Buveinė (miestas) *<input type="text" name="city" required></label><label class="org-only">Registracijos numeris <span class="muted">(neprivaloma)</span><input type="text" name="uid"></label><label class="org-only">Svetainė *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Atstovas</legend>
-<label>Vardas ir pavardė *<input type="text" name="name" required></label><label>Pareigos organizacijoje *<input type="text" name="role" required></label><label>El. paštas *<input type="email" name="email" required></label><label>Telefonas <span class="muted">(neprivaloma)</span><input type="tel" name="phone"></label>
+<label>Vardas ir pavardė *<input type="text" name="name" required></label><label class="org-only">Pareigos organizacijoje *<input type="text" name="role" required></label><label>El. paštas *<input type="email" name="email" required></label><label>Telefonas <span class="muted">(neprivaloma)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Narystė</legend>
-<label>Kategorija *<select name="category" required><option value="member">Narys (organizacija, su balso teise)</option><option value="observer">Stebėtojas (asmuo ar institucija, be balso teisės)</option></select></label>
-<label>Dydis ir metinis mokestis (CHF) *<select name="size" required><option value="0">Privatus asmuo (stebėtojas): 100</option><option value="1">Iki 5 darbuotojų, ne pelno organizacija, universitetas: 300</option><option value="2">Nuo 6 iki 19 darbuotojų: 800</option><option value="3">Nuo 20 iki 49 darbuotojų: 1 500</option><option value="4">Nuo 50 iki 249 darbuotojų: 3 000</option><option value="5">Nuo 250 iki 999 darbuotojų: 5 000</option><option value="6">Strateginis narys, nuo 1 000 iki 9 999 darbuotojų: 50 000</option><option value="7">Strateginis narys, 10 000 ar daugiau darbuotojų: nuo 100 000, pagal susitarimą</option></select></label>
+<label class="org-only">Kategorija *<select name="category" required><option value="member">Narys (organizacija, su balso teise)</option><option value="observer">Stebėtojas (asmuo ar institucija, be balso teisės)</option></select></label>
+<label class="org-only">Dydis ir metinis mokestis (CHF) *<select name="size" required><option value="0">Privatus asmuo (stebėtojas): 100</option><option value="1">Iki 5 darbuotojų, ne pelno organizacija, universitetas: 300</option><option value="2">Nuo 6 iki 19 darbuotojų: 800</option><option value="3">Nuo 20 iki 49 darbuotojų: 1 500</option><option value="4">Nuo 50 iki 249 darbuotojų: 3 000</option><option value="5">Nuo 250 iki 999 darbuotojų: 5 000</option><option value="6">Strateginis narys, nuo 1 000 iki 9 999 darbuotojų: 50 000</option><option value="7">Strateginis narys, 10 000 ar daugiau darbuotojų: nuo 100 000, pagal susitarimą</option></select></label>
 <p class="muted">Neturite pinigų mokesčiui? Vis tiek teikite paraišką. Paskutiniame laukelyje aprašykite savo savanorišką, profesinį ar kūrybinį indėlį arba tiesiog paprašykite paramos. Valdyba kiekvieną paraišką svarsto rimtai.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Taip pat norėtume būti remiančiuoju nariu (nuo CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Prašome sumažinto mokesčio (paaiškinkite žemiau)</label>
 </fieldset>
 <fieldset><legend>Veikla ir pareiškimai</legend>
-<label>Su kuo dirbate *<textarea name="work" rows="3" required></textarea></label><label>Atskleistini produktai ir metodai *<textarea name="products" rows="3" required></textarea></label><label>Naudos gavėjai, turintys 25 % ar daugiau arba kontroliuojantys organizaciją *<textarea name="owners" rows="3" required></textarea></label><label>Ryšiai su kitais nariais arba su iniciatore (savininkai, vadovai, finansavimas, sutartys) arba „nėra“ *<textarea name="relations" rows="3" required></textarea></label><label>Bandymo atvejis, kurį atneštumėte <span class="muted">(neprivaloma)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Su kuo dirbate *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Atskleistini produktai ir metodai *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Naudos gavėjai, turintys 25 % ar daugiau arba kontroliuojantys organizaciją *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Ryšiai su kitais nariais arba su iniciatore (savininkai, vadovai, finansavimas, sutartys) arba „nėra“ *<textarea name="relations" rows="3" required></textarea></label><label>Bandymo atvejis, kurį atneštumėte <span class="muted">(neprivaloma)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Pageidaujamas mokėjimo būdas <span class="muted">(neprivaloma)</span><select name="pay"><option value=""></option><option value="0">Stabilioji kriptovaliuta (USDT, USDC, EURC, EURAU, CHFAU Ethereum tinkle)</option><option value="1">Banko pavedimas, kai sąskaita bus atidaryta</option><option value="2">Bitcoin, kai bus prieinamas</option><option value="3">PayPal</option></select></label>
 <label>Kita <span class="muted">(neprivaloma)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

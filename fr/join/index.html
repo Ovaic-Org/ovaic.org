@@ -47,22 +47,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="fr">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Je pose ma candidature en tant que</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organisation</label>
+<label class="check"><input type="radio" name="kind" value="individual"> personne individuelle (formulaire court)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organisation</legend>
-<label>Raison sociale *<input type="text" name="org" required></label><label>Forme juridique *<input type="text" name="legal_form" required></label><label>Pays *<input type="text" name="country" required></label><label>Siège (ville) *<input type="text" name="city" required></label><label>Numéro de registre <span class="muted">(facultatif)</span><input type="text" name="uid"></label><label>Site web *<input type="url" name="web" required></label>
+<label class="org-only">Raison sociale *<input type="text" name="org" required></label><label class="org-only">Forme juridique *<input type="text" name="legal_form" required></label><label>Pays *<input type="text" name="country" required></label><label>Siège (ville) *<input type="text" name="city" required></label><label class="org-only">Numéro de registre <span class="muted">(facultatif)</span><input type="text" name="uid"></label><label class="org-only">Site web *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Représentant</legend>
-<label>Nom complet *<input type="text" name="name" required></label><label>Fonction dans l&#x27;organisation *<input type="text" name="role" required></label><label>Courriel *<input type="email" name="email" required></label><label>Téléphone <span class="muted">(facultatif)</span><input type="tel" name="phone"></label>
+<label>Nom complet *<input type="text" name="name" required></label><label class="org-only">Fonction dans l&#x27;organisation *<input type="text" name="role" required></label><label>Courriel *<input type="email" name="email" required></label><label>Téléphone <span class="muted">(facultatif)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Adhésion</legend>
-<label>Catégorie *<select name="category" required><option value="member">Membre (organisation, avec droit de vote)</option><option value="observer">Observateur (personne ou organisme, sans droit de vote)</option></select></label>
-<label>Taille et cotisation annuelle (CHF) *<select name="size" required><option value="0">Particulier (observateur) : 100</option><option value="1">Jusqu&#x27;à 5 personnes, but non lucratif, université : 300</option><option value="2">6 à 19 personnes : 800</option><option value="3">20 à 49 personnes : 1 500</option><option value="4">50 à 249 personnes : 3 000</option><option value="5">250 à 999 personnes : 5 000</option><option value="6">Membre stratégique, 1 000 à 9 999 personnes : 50 000</option><option value="7">Membre stratégique, 10 000 personnes ou plus : dès 100 000, sur accord</option></select></label>
+<label class="org-only">Catégorie *<select name="category" required><option value="member">Membre (organisation, avec droit de vote)</option><option value="observer">Observateur (personne ou organisme, sans droit de vote)</option></select></label>
+<label class="org-only">Taille et cotisation annuelle (CHF) *<select name="size" required><option value="0">Particulier (observateur) : 100</option><option value="1">Jusqu&#x27;à 5 personnes, but non lucratif, université : 300</option><option value="2">6 à 19 personnes : 800</option><option value="3">20 à 49 personnes : 1 500</option><option value="4">50 à 249 personnes : 3 000</option><option value="5">250 à 999 personnes : 5 000</option><option value="6">Membre stratégique, 1 000 à 9 999 personnes : 50 000</option><option value="7">Membre stratégique, 10 000 personnes ou plus : dès 100 000, sur accord</option></select></label>
 <p class="muted">Pas d&#x27;argent pour la cotisation ? Posez votre candidature quand même. Dans le dernier champ, décrivez votre contribution bénévole, professionnelle ou créative, ou demandez simplement un soutien. Le comité examine chaque candidature avec sérieux.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Nous souhaitons aussi devenir membre de soutien (dès CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Nous demandons une cotisation réduite (merci d&#x27;expliquer ci-dessous)</label>
 </fieldset>
 <fieldset><legend>Activité et déclarations</legend>
-<label>Votre domaine de travail *<textarea name="work" rows="3" required></textarea></label><label>Produits et méthodes à déclarer *<textarea name="products" rows="3" required></textarea></label><label>Ayants droit économiques détenant 25 % ou plus, ou contrôlant l&#x27;organisation *<textarea name="owners" rows="3" required></textarea></label><label>Liens avec d&#x27;autres membres ou avec l&#x27;initiatrice (propriétaires, dirigeants, financement, contrats), ou &quot;aucun&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Un cas de test que vous apporteriez <span class="muted">(facultatif)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Votre domaine de travail *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Produits et méthodes à déclarer *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Ayants droit économiques détenant 25 % ou plus, ou contrôlant l&#x27;organisation *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Liens avec d&#x27;autres membres ou avec l&#x27;initiatrice (propriétaires, dirigeants, financement, contrats), ou &quot;aucun&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Un cas de test que vous apporteriez <span class="muted">(facultatif)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Mode de paiement préféré <span class="muted">(facultatif)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU sur Ethereum)</option><option value="1">Virement bancaire, dès l&#x27;ouverture du compte</option><option value="2">Bitcoin, dès que disponible</option><option value="3">PayPal</option></select></label>
 <label>Autre remarque <span class="muted">(facultatif)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -73,6 +77,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

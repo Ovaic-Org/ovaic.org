@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="lv">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Piesakos kā</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organizācija</label>
+<label class="check"><input type="radio" name="kind" value="individual"> privātpersona (īsa veidlapa)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organizācija</legend>
-<label>Juridiskais nosaukums *<input type="text" name="org" required></label><label>Juridiskā forma *<input type="text" name="legal_form" required></label><label>Valsts *<input type="text" name="country" required></label><label>Juridiskā adrese (pilsēta) *<input type="text" name="city" required></label><label>Reģistrācijas numurs <span class="muted">(nav obligāti)</span><input type="text" name="uid"></label><label>Tīmekļa vietne *<input type="url" name="web" required></label>
+<label class="org-only">Juridiskais nosaukums *<input type="text" name="org" required></label><label class="org-only">Juridiskā forma *<input type="text" name="legal_form" required></label><label>Valsts *<input type="text" name="country" required></label><label>Juridiskā adrese (pilsēta) *<input type="text" name="city" required></label><label class="org-only">Reģistrācijas numurs <span class="muted">(nav obligāti)</span><input type="text" name="uid"></label><label class="org-only">Tīmekļa vietne *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Pārstāvis</legend>
-<label>Vārds un uzvārds *<input type="text" name="name" required></label><label>Amats organizācijā *<input type="text" name="role" required></label><label>E-pasts *<input type="email" name="email" required></label><label>Tālrunis <span class="muted">(nav obligāti)</span><input type="tel" name="phone"></label>
+<label>Vārds un uzvārds *<input type="text" name="name" required></label><label class="org-only">Amats organizācijā *<input type="text" name="role" required></label><label>E-pasts *<input type="email" name="email" required></label><label>Tālrunis <span class="muted">(nav obligāti)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Dalība</legend>
-<label>Kategorija *<select name="category" required><option value="member">Biedrs (organizācija, ar balsstiesībām)</option><option value="observer">Novērotājs (persona vai iestāde, bez balsstiesībām)</option></select></label>
-<label>Lielums un gada maksa (CHF) *<select name="size" required><option value="0">Privātpersona (novērotājs): 100</option><option value="1">Līdz 5 darbiniekiem, bezpeļņas organizācija, universitāte: 300</option><option value="2">No 6 līdz 19 darbiniekiem: 800</option><option value="3">No 20 līdz 49 darbiniekiem: 1 500</option><option value="4">No 50 līdz 249 darbiniekiem: 3 000</option><option value="5">No 250 līdz 999 darbiniekiem: 5 000</option><option value="6">Stratēģiskais biedrs, no 1 000 līdz 9 999 darbiniekiem: 50 000</option><option value="7">Stratēģiskais biedrs, 10 000 darbinieku vai vairāk: no 100 000, pēc vienošanās</option></select></label>
+<label class="org-only">Kategorija *<select name="category" required><option value="member">Biedrs (organizācija, ar balsstiesībām)</option><option value="observer">Novērotājs (persona vai iestāde, bez balsstiesībām)</option></select></label>
+<label class="org-only">Lielums un gada maksa (CHF) *<select name="size" required><option value="0">Privātpersona (novērotājs): 100</option><option value="1">Līdz 5 darbiniekiem, bezpeļņas organizācija, universitāte: 300</option><option value="2">No 6 līdz 19 darbiniekiem: 800</option><option value="3">No 20 līdz 49 darbiniekiem: 1 500</option><option value="4">No 50 līdz 249 darbiniekiem: 3 000</option><option value="5">No 250 līdz 999 darbiniekiem: 5 000</option><option value="6">Stratēģiskais biedrs, no 1 000 līdz 9 999 darbiniekiem: 50 000</option><option value="7">Stratēģiskais biedrs, 10 000 darbinieku vai vairāk: no 100 000, pēc vienošanās</option></select></label>
 <p class="muted">Nav naudas biedra naudai? Piesakieties tik un tā. Pēdējā laukā aprakstiet savu brīvprātīgo, profesionālo vai radošo ieguldījumu vai vienkārši lūdziet atbalstu. Valde katru pieteikumu izskata nopietni.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Mēs vēlētos būt arī atbalstītājbiedrs (no CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Lūdzam samazinātu maksu (paskaidrojiet zemāk)</label>
 </fieldset>
 <fieldset><legend>Darbība un apliecinājumi</legend>
-<label>Pie kā strādājat *<textarea name="work" rows="3" required></textarea></label><label>Atklājamie produkti un metodes *<textarea name="products" rows="3" required></textarea></label><label>Patiesā labuma guvēji ar 25 % vai lielāku daļu vai tie, kas kontrolē organizāciju *<textarea name="owners" rows="3" required></textarea></label><label>Saistības ar citiem biedriem vai ar iniciatoru (īpašnieki, vadība, finansējums, līgumi) vai “nav” *<textarea name="relations" rows="3" required></textarea></label><label>Testa gadījums, ko jūs atnestu <span class="muted">(nav obligāti)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Pie kā strādājat *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Atklājamie produkti un metodes *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Patiesā labuma guvēji ar 25 % vai lielāku daļu vai tie, kas kontrolē organizāciju *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Saistības ar citiem biedriem vai ar iniciatoru (īpašnieki, vadība, finansējums, līgumi) vai “nav” *<textarea name="relations" rows="3" required></textarea></label><label>Testa gadījums, ko jūs atnestu <span class="muted">(nav obligāti)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Vēlamais maksājuma veids <span class="muted">(nav obligāti)</span><select name="pay"><option value=""></option><option value="0">Stabilā monēta (USDT, USDC, EURC, EURAU, CHFAU Ethereum tīklā)</option><option value="1">Bankas pārskaitījums, kad konts būs atvērts</option><option value="2">Bitcoin, kad būs pieejams</option><option value="3">PayPal</option></select></label>
 <label>Cits <span class="muted">(nav obligāti)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

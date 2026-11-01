@@ -116,3 +116,29 @@ JOIN = {
     "ja": "会費を払うお金がありませんか？それでも申請してください。最後の欄に、ボランティア、専門的、または創造的な貢献を記入するか、単に支援をお願いしてください。理事会はすべての申請を真剣に検討します。",
     "ko": "회비를 낼 돈이 없으신가요? 그래도 신청하세요. 마지막 칸에 자원봉사, 전문적 또는 창의적 기여를 적거나 그냥 지원을 요청하세요. 이사회는 모든 신청을 진지하게 검토합니다.",
 }
+
+# Application form: who applies (label, organisation, individual). Individuals get a short form.
+KIND = {
+    "en": ("I apply as", "an organisation", "an individual (short form)"),
+    "de": ("Ich bewerbe mich als", "Organisation", "Einzelperson (kurzes Formular)"),
+    "fr": ("Je pose ma candidature en tant que", "organisation", "personne individuelle (formulaire court)"),
+    "it": ("Mi candido come", "organizzazione", "persona fisica (modulo breve)"),
+    "es": ("Solicito como", "organización", "persona individual (formulario breve)"),
+    "pt": ("Candidato-me como", "organização", "pessoa individual (formulário curto)"),
+    "ru": ("Я подаю заявку как", "организация", "частное лицо (короткая форма)"),
+    "uk": ("Я подаю заявку як", "організація", "приватна особа (коротка форма)"),
+    "be": ("Я падаю заяўку як", "арганізацыя", "прыватная асоба (кароткая форма)"),
+    "pl": ("Składam wniosek jako", "organizacja", "osoba prywatna (krótki formularz)"),
+    "cs": ("Přihlašuji se jako", "organizace", "jednotlivec (krátký formulář)"),
+    "sk": ("Prihlasujem sa ako", "organizácia", "jednotlivec (krátky formulár)"),
+    "sl": ("Prijavljam se kot", "organizacija", "posameznik (kratek obrazec)"),
+    "sr": ("Пријављујем се као", "организација", "појединац (кратак образац)"),
+    "hu": ("Jelentkezem mint", "szervezet", "magánszemély (rövid űrlap)"),
+    "lv": ("Piesakos kā", "organizācija", "privātpersona (īsa veidlapa)"),
+    "lt": ("Teikiu paraišką kaip", "organizacija", "privatus asmuo (trumpa forma)"),
+    "et": ("Kandideerin kui", "organisatsioon", "eraisik (lühike vorm)"),
+    "sv": ("Jag ansöker som", "organisation", "privatperson (kort formulär)"),
+    "no": ("Jeg søker som", "organisasjon", "privatperson (kort skjema)"),
+    "ja": ("申請の区分", "組織", "個人（簡易フォーム）"),
+    "ko": ("신청 구분", "조직", "개인 (간단한 양식)"),
+}

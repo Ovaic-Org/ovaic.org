@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="no">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Jeg søker som</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organisasjon</label>
+<label class="check"><input type="radio" name="kind" value="individual"> privatperson (kort skjema)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organisasjon</legend>
-<label>Juridisk navn *<input type="text" name="org" required></label><label>Juridisk form *<input type="text" name="legal_form" required></label><label>Land *<input type="text" name="country" required></label><label>Sete (by) *<input type="text" name="city" required></label><label>Registreringsnummer <span class="muted">(valgfritt)</span><input type="text" name="uid"></label><label>Nettsted *<input type="url" name="web" required></label>
+<label class="org-only">Juridisk navn *<input type="text" name="org" required></label><label class="org-only">Juridisk form *<input type="text" name="legal_form" required></label><label>Land *<input type="text" name="country" required></label><label>Sete (by) *<input type="text" name="city" required></label><label class="org-only">Registreringsnummer <span class="muted">(valgfritt)</span><input type="text" name="uid"></label><label class="org-only">Nettsted *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Representant</legend>
-<label>Fullt navn *<input type="text" name="name" required></label><label>Rolle i organisasjonen *<input type="text" name="role" required></label><label>E-post *<input type="email" name="email" required></label><label>Telefon <span class="muted">(valgfritt)</span><input type="tel" name="phone"></label>
+<label>Fullt navn *<input type="text" name="name" required></label><label class="org-only">Rolle i organisasjonen *<input type="text" name="role" required></label><label>E-post *<input type="email" name="email" required></label><label>Telefon <span class="muted">(valgfritt)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Medlemskap</legend>
-<label>Kategori *<select name="category" required><option value="member">Medlem (organisasjon, med stemmerett)</option><option value="observer">Observatør (person eller organ, uten stemmerett)</option></select></label>
-<label>Størrelse og årskontingent (CHF) *<select name="size" required><option value="0">Privatperson (observatør): 100</option><option value="1">Opptil 5 ansatte, ideell, universitet: 300</option><option value="2">6 til 19 ansatte: 800</option><option value="3">20 til 49 ansatte: 1 500</option><option value="4">50 til 249 ansatte: 3 000</option><option value="5">250 til 999 ansatte: 5 000</option><option value="6">Strategisk medlem, 1 000 til 9 999 ansatte: 50 000</option><option value="7">Strategisk medlem, 10 000 ansatte eller flere: fra 100 000, etter avtale</option></select></label>
+<label class="org-only">Kategori *<select name="category" required><option value="member">Medlem (organisasjon, med stemmerett)</option><option value="observer">Observatør (person eller organ, uten stemmerett)</option></select></label>
+<label class="org-only">Størrelse og årskontingent (CHF) *<select name="size" required><option value="0">Privatperson (observatør): 100</option><option value="1">Opptil 5 ansatte, ideell, universitet: 300</option><option value="2">6 til 19 ansatte: 800</option><option value="3">20 til 49 ansatte: 1 500</option><option value="4">50 til 249 ansatte: 3 000</option><option value="5">250 til 999 ansatte: 5 000</option><option value="6">Strategisk medlem, 1 000 til 9 999 ansatte: 50 000</option><option value="7">Strategisk medlem, 10 000 ansatte eller flere: fra 100 000, etter avtale</option></select></label>
 <p class="muted">Ingen penger til kontingenten? Søk likevel. Beskriv i det siste feltet ditt frivillige, faglige eller kreative bidrag, eller be ganske enkelt om støtte. Styret behandler hver søknad med alvor.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Vi ønsker også å være støttemedlem (fra CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Vi ber om redusert kontingent (forklar nedenfor)</label>
 </fieldset>
 <fieldset><legend>Virksomhet og erklæringer</legend>
-<label>Hva dere arbeider med *<textarea name="work" rows="3" required></textarea></label><label>Produkter og metoder som skal opplyses *<textarea name="products" rows="3" required></textarea></label><label>Reelle rettighetshavere med 25 % eller mer, eller som kontrollerer organisasjonen *<textarea name="owners" rows="3" required></textarea></label><label>Forbindelser med andre medlemmer eller med initiativtakeren (eiere, styre, finansiering, kontrakter), eller &quot;ingen&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Et testtilfelle dere ville bidra med <span class="muted">(valgfritt)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Hva dere arbeider med *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Produkter og metoder som skal opplyses *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Reelle rettighetshavere med 25 % eller mer, eller som kontrollerer organisasjonen *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Forbindelser med andre medlemmer eller med initiativtakeren (eiere, styre, finansiering, kontrakter), eller &quot;ingen&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Et testtilfelle dere ville bidra med <span class="muted">(valgfritt)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Foretrukket betalingsmåte <span class="muted">(valgfritt)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU på Ethereum)</option><option value="1">Bankoverføring, når kontoen er åpnet</option><option value="2">Bitcoin, når det er tilgjengelig</option><option value="3">PayPal</option></select></label>
 <label>Annet <span class="muted">(valgfritt)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

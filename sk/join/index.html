@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="sk">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Prihlasujem sa ako</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organizácia</label>
+<label class="check"><input type="radio" name="kind" value="individual"> jednotlivec (krátky formulár)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organizácia</legend>
-<label>Právny názov *<input type="text" name="org" required></label><label>Právna forma *<input type="text" name="legal_form" required></label><label>Krajina *<input type="text" name="country" required></label><label>Sídlo (mesto) *<input type="text" name="city" required></label><label>Registračné číslo <span class="muted">(nepovinné)</span><input type="text" name="uid"></label><label>Web *<input type="url" name="web" required></label>
+<label class="org-only">Právny názov *<input type="text" name="org" required></label><label class="org-only">Právna forma *<input type="text" name="legal_form" required></label><label>Krajina *<input type="text" name="country" required></label><label>Sídlo (mesto) *<input type="text" name="city" required></label><label class="org-only">Registračné číslo <span class="muted">(nepovinné)</span><input type="text" name="uid"></label><label class="org-only">Web *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Zástupca</legend>
-<label>Celé meno *<input type="text" name="name" required></label><label>Funkcia v organizácii *<input type="text" name="role" required></label><label>E-mail *<input type="email" name="email" required></label><label>Telefón <span class="muted">(nepovinné)</span><input type="tel" name="phone"></label>
+<label>Celé meno *<input type="text" name="name" required></label><label class="org-only">Funkcia v organizácii *<input type="text" name="role" required></label><label>E-mail *<input type="email" name="email" required></label><label>Telefón <span class="muted">(nepovinné)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Členstvo</legend>
-<label>Kategória *<select name="category" required><option value="member">Člen (organizácia, s hlasovacím právom)</option><option value="observer">Pozorovateľ (osoba alebo inštitúcia, bez hlasovacieho práva)</option></select></label>
-<label>Veľkosť a ročný príspevok (CHF) *<select name="size" required><option value="0">Jednotlivec (pozorovateľ): 100</option><option value="1">Do 5 zamestnancov, nezisková organizácia, univerzita: 300</option><option value="2">6 až 19 zamestnancov: 800</option><option value="3">20 až 49 zamestnancov: 1 500</option><option value="4">50 až 249 zamestnancov: 3 000</option><option value="5">250 až 999 zamestnancov: 5 000</option><option value="6">Strategický člen, 1 000 až 9 999 zamestnancov: 50 000</option><option value="7">Strategický člen, 10 000 a viac zamestnancov: od 100 000, dohodou</option></select></label>
+<label class="org-only">Kategória *<select name="category" required><option value="member">Člen (organizácia, s hlasovacím právom)</option><option value="observer">Pozorovateľ (osoba alebo inštitúcia, bez hlasovacieho práva)</option></select></label>
+<label class="org-only">Veľkosť a ročný príspevok (CHF) *<select name="size" required><option value="0">Jednotlivec (pozorovateľ): 100</option><option value="1">Do 5 zamestnancov, nezisková organizácia, univerzita: 300</option><option value="2">6 až 19 zamestnancov: 800</option><option value="3">20 až 49 zamestnancov: 1 500</option><option value="4">50 až 249 zamestnancov: 3 000</option><option value="5">250 až 999 zamestnancov: 5 000</option><option value="6">Strategický člen, 1 000 až 9 999 zamestnancov: 50 000</option><option value="7">Strategický člen, 10 000 a viac zamestnancov: od 100 000, dohodou</option></select></label>
 <p class="muted">Nemáte peniaze na príspevok? Prihláste sa aj tak. V poslednom poli opíšte svoj dobrovoľnícky, odborný alebo tvorivý prínos, alebo jednoducho požiadajte o podporu. Predstavenstvo každú prihlášku vážne posúdi.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Radi by sme boli aj podporujúcim členom (od CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Žiadame o znížený príspevok (vysvetlite nižšie)</label>
 </fieldset>
 <fieldset><legend>Činnosť a vyhlásenia</legend>
-<label>Na čom pracujete *<textarea name="work" rows="3" required></textarea></label><label>Produkty a metódy na zverejnenie *<textarea name="products" rows="3" required></textarea></label><label>Koneční užívatelia výhod s podielom 25 % alebo viac, alebo tí, ktorí organizáciu ovládajú *<textarea name="owners" rows="3" required></textarea></label><label>Vzťahy k ostatným členom alebo k iniciátorovi (vlastníci, štatutárne orgány, financovanie, zmluvy), alebo „žiadne“ *<textarea name="relations" rows="3" required></textarea></label><label>Testovací prípad, ktorý by ste priniesli <span class="muted">(nepovinné)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Na čom pracujete *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Produkty a metódy na zverejnenie *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Koneční užívatelia výhod s podielom 25 % alebo viac, alebo tí, ktorí organizáciu ovládajú *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Vzťahy k ostatným členom alebo k iniciátorovi (vlastníci, štatutárne orgány, financovanie, zmluvy), alebo „žiadne“ *<textarea name="relations" rows="3" required></textarea></label><label>Testovací prípad, ktorý by ste priniesli <span class="muted">(nepovinné)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Preferovaný spôsob platby <span class="muted">(nepovinné)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU na Ethereu)</option><option value="1">Bankový prevod, keď bude účet otvorený</option><option value="2">Bitcoin, keď bude dostupný</option><option value="3">PayPal</option></select></label>
 <label>Ďalšie <span class="muted">(nepovinné)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

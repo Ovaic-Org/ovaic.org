@@ -47,22 +47,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="it">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Mi candido come</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organizzazione</label>
+<label class="check"><input type="radio" name="kind" value="individual"> persona fisica (modulo breve)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organizzazione</legend>
-<label>Ragione sociale *<input type="text" name="org" required></label><label>Forma giuridica *<input type="text" name="legal_form" required></label><label>Paese *<input type="text" name="country" required></label><label>Sede (città) *<input type="text" name="city" required></label><label>Numero di registro <span class="muted">(facoltativo)</span><input type="text" name="uid"></label><label>Sito web *<input type="url" name="web" required></label>
+<label class="org-only">Ragione sociale *<input type="text" name="org" required></label><label class="org-only">Forma giuridica *<input type="text" name="legal_form" required></label><label>Paese *<input type="text" name="country" required></label><label>Sede (città) *<input type="text" name="city" required></label><label class="org-only">Numero di registro <span class="muted">(facoltativo)</span><input type="text" name="uid"></label><label class="org-only">Sito web *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Rappresentante</legend>
-<label>Nome e cognome *<input type="text" name="name" required></label><label>Ruolo nell&#x27;organizzazione *<input type="text" name="role" required></label><label>Email *<input type="email" name="email" required></label><label>Telefono <span class="muted">(facoltativo)</span><input type="tel" name="phone"></label>
+<label>Nome e cognome *<input type="text" name="name" required></label><label class="org-only">Ruolo nell&#x27;organizzazione *<input type="text" name="role" required></label><label>Email *<input type="email" name="email" required></label><label>Telefono <span class="muted">(facoltativo)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Adesione</legend>
-<label>Categoria *<select name="category" required><option value="member">Membro (organizzazione, con diritto di voto)</option><option value="observer">Osservatore (persona o ente, senza diritto di voto)</option></select></label>
-<label>Dimensione e quota annuale (CHF) *<select name="size" required><option value="0">Privato (osservatore): 100</option><option value="1">Fino a 5 persone, senza scopo di lucro, università: 300</option><option value="2">Da 6 a 19 persone: 800</option><option value="3">Da 20 a 49 persone: 1 500</option><option value="4">Da 50 a 249 persone: 3 000</option><option value="5">Da 250 a 999 persone: 5 000</option><option value="6">Membro strategico, da 1 000 a 9 999 persone: 50 000</option><option value="7">Membro strategico, 10 000 persone o più: da 100 000, su accordo</option></select></label>
+<label class="org-only">Categoria *<select name="category" required><option value="member">Membro (organizzazione, con diritto di voto)</option><option value="observer">Osservatore (persona o ente, senza diritto di voto)</option></select></label>
+<label class="org-only">Dimensione e quota annuale (CHF) *<select name="size" required><option value="0">Privato (osservatore): 100</option><option value="1">Fino a 5 persone, senza scopo di lucro, università: 300</option><option value="2">Da 6 a 19 persone: 800</option><option value="3">Da 20 a 49 persone: 1 500</option><option value="4">Da 50 a 249 persone: 3 000</option><option value="5">Da 250 a 999 persone: 5 000</option><option value="6">Membro strategico, da 1 000 a 9 999 persone: 50 000</option><option value="7">Membro strategico, 10 000 persone o più: da 100 000, su accordo</option></select></label>
 <p class="muted">Niente denaro per la quota? Candidatevi comunque. Nell&#x27;ultimo campo descrivete il vostro contributo volontario, professionale o creativo, oppure chiedete semplicemente sostegno. Il comitato esamina ogni candidatura con serietà.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Vorremmo anche essere membro sostenitore (da CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Chiediamo una quota ridotta (spiegare sotto)</label>
 </fieldset>
 <fieldset><legend>Attività e dichiarazioni</legend>
-<label>Il vostro ambito di lavoro *<textarea name="work" rows="3" required></textarea></label><label>Prodotti e metodi da dichiarare *<textarea name="products" rows="3" required></textarea></label><label>Aventi diritto economico con il 25 % o più, o che controllano l&#x27;organizzazione *<textarea name="owners" rows="3" required></textarea></label><label>Legami con altri membri o con la promotrice (proprietari, organi, finanziamenti, contratti), oppure &quot;nessuno&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Un caso di prova che portereste <span class="muted">(facoltativo)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Il vostro ambito di lavoro *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Prodotti e metodi da dichiarare *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Aventi diritto economico con il 25 % o più, o che controllano l&#x27;organizzazione *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Legami con altri membri o con la promotrice (proprietari, organi, finanziamenti, contratti), oppure &quot;nessuno&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Un caso di prova che portereste <span class="muted">(facoltativo)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Modalità di pagamento preferita <span class="muted">(facoltativo)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU su Ethereum)</option><option value="1">Bonifico bancario, dopo l&#x27;apertura del conto</option><option value="2">Bitcoin, appena disponibile</option><option value="3">PayPal</option></select></label>
 <label>Altro <span class="muted">(facoltativo)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -73,6 +77,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

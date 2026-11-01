@@ -5,7 +5,7 @@ import re
 
 from people import BOARD, FOUNDED, MEMBERS, OCT, P
 from texts import T
-from open_texts import JOIN, OPEN
+from open_texts import JOIN, KIND, OPEN
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TOOLS = ROOT / "tools"
@@ -346,8 +346,11 @@ def join(lang):
         lab = E(label) if req else f"{E(label)} <span class=\"muted\">({E(t['opt'])})</span>"
         inp = (f'<textarea name="{name}" rows="3"{r}></textarea>' if area
                else f'<input type="{kind}" name="{name}"{r}>')
-        return f'<label>{lab}{inp}</label>'
+        cls = ' class="org-only"' if name in ORG_ONLY else ""
+        return f'<label{cls}>{lab}{inp}</label>'
 
+    ORG_ONLY = {"org", "legal_form", "uid", "web", "role", "products", "owners", "relations"}
+    k = KIND[lang]
     sizes = "".join(f'<option value="{i}">{E(x)}</option>' for i, x in enumerate(t["sizes"]))
     pays = "".join(f'<option value="{i}">{E(x)}</option>' for i, x in enumerate(t["pay"]))
     return f"""{head(lang, t['j_title'], 'join/')}
@@ -361,6 +364,10 @@ def join(lang):
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="{lang}">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>{E(k[0])}</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> {E(k[1])}</label>
+<label class="check"><input type="radio" name="kind" value="individual"> {E(k[2])}</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>{E(t['sec_org'])}</legend>
 {field('org', t['f_org'])}{field('legal_form', t['f_legal'])}{field('country', t['f_country'])}{field('city', t['f_city'])}{field('uid', t['f_uid'], req=False)}{field('web', t['f_web'], 'url')}
@@ -369,8 +376,8 @@ def join(lang):
 {field('name', t['f_name'])}{field('role', t['f_role'])}{field('email', t['f_email'], 'email')}{field('phone', t['f_phone'], 'tel', req=False)}
 </fieldset>
 <fieldset><legend>{E(t['sec_mem'])}</legend>
-<label>{E(t['f_cat'])}<select name="category" required><option value="member">{E(t['cat_member'])}</option><option value="observer">{E(t['cat_observer'])}</option></select></label>
-<label>{E(t['f_size'])}<select name="size" required>{sizes}</select></label>
+<label class="org-only">{E(t['f_cat'])}<select name="category" required><option value="member">{E(t['cat_member'])}</option><option value="observer">{E(t['cat_observer'])}</option></select></label>
+<label class="org-only">{E(t['f_size'])}<select name="size" required>{sizes}</select></label>
 <p class="muted">{E(JOIN[lang])}</p>
 <label class="check"><input type="checkbox" name="support" value="1"> {E(t['f_support'])}</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> {E(t['f_reduce'])}</label>
@@ -387,6 +394,10 @@ def join(lang):
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){{var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){{l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){{if(f.hasAttribute('required')||f.dataset.req){{f.dataset.req=1;f.required=!ind;}}}});}});
+if(ind){{document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){{r.addEventListener('change',kind);}});
 var q=location.search;if(q.indexOf('sent=1')>=0){{document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

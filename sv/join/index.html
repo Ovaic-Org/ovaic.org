@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="sv">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Jag ansöker som</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organisation</label>
+<label class="check"><input type="radio" name="kind" value="individual"> privatperson (kort formulär)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organisation</legend>
-<label>Juridiskt namn *<input type="text" name="org" required></label><label>Juridisk form *<input type="text" name="legal_form" required></label><label>Land *<input type="text" name="country" required></label><label>Säte (ort) *<input type="text" name="city" required></label><label>Registreringsnummer <span class="muted">(frivilligt)</span><input type="text" name="uid"></label><label>Webbplats *<input type="url" name="web" required></label>
+<label class="org-only">Juridiskt namn *<input type="text" name="org" required></label><label class="org-only">Juridisk form *<input type="text" name="legal_form" required></label><label>Land *<input type="text" name="country" required></label><label>Säte (ort) *<input type="text" name="city" required></label><label class="org-only">Registreringsnummer <span class="muted">(frivilligt)</span><input type="text" name="uid"></label><label class="org-only">Webbplats *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Företrädare</legend>
-<label>Fullständigt namn *<input type="text" name="name" required></label><label>Roll i organisationen *<input type="text" name="role" required></label><label>E-post *<input type="email" name="email" required></label><label>Telefon <span class="muted">(frivilligt)</span><input type="tel" name="phone"></label>
+<label>Fullständigt namn *<input type="text" name="name" required></label><label class="org-only">Roll i organisationen *<input type="text" name="role" required></label><label>E-post *<input type="email" name="email" required></label><label>Telefon <span class="muted">(frivilligt)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Medlemskap</legend>
-<label>Kategori *<select name="category" required><option value="member">Medlem (organisation, med rösträtt)</option><option value="observer">Observatör (person eller organ, utan rösträtt)</option></select></label>
-<label>Storlek och årsavgift (CHF) *<select name="size" required><option value="0">Privatperson (observatör): 100</option><option value="1">Upp till 5 anställda, ideell, universitet: 300</option><option value="2">6 till 19 anställda: 800</option><option value="3">20 till 49 anställda: 1 500</option><option value="4">50 till 249 anställda: 3 000</option><option value="5">250 till 999 anställda: 5 000</option><option value="6">Strategisk medlem, 1 000 till 9 999 anställda: 50 000</option><option value="7">Strategisk medlem, 10 000 anställda eller fler: från 100 000, enligt avtal</option></select></label>
+<label class="org-only">Kategori *<select name="category" required><option value="member">Medlem (organisation, med rösträtt)</option><option value="observer">Observatör (person eller organ, utan rösträtt)</option></select></label>
+<label class="org-only">Storlek och årsavgift (CHF) *<select name="size" required><option value="0">Privatperson (observatör): 100</option><option value="1">Upp till 5 anställda, ideell, universitet: 300</option><option value="2">6 till 19 anställda: 800</option><option value="3">20 till 49 anställda: 1 500</option><option value="4">50 till 249 anställda: 3 000</option><option value="5">250 till 999 anställda: 5 000</option><option value="6">Strategisk medlem, 1 000 till 9 999 anställda: 50 000</option><option value="7">Strategisk medlem, 10 000 anställda eller fler: från 100 000, enligt avtal</option></select></label>
 <p class="muted">Inga pengar till avgiften? Ansök ändå. Beskriv i det sista fältet ditt frivilliga, yrkesmässiga eller kreativa bidrag, eller be helt enkelt om stöd. Styrelsen prövar varje ansökan på allvar.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Vi vill också bli stödjande medlem (från CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Vi ber om reducerad avgift (förklara nedan)</label>
 </fieldset>
 <fieldset><legend>Verksamhet och försäkringar</legend>
-<label>Vad ni arbetar med *<textarea name="work" rows="3" required></textarea></label><label>Produkter och metoder att redovisa *<textarea name="products" rows="3" required></textarea></label><label>Verkliga huvudmän med 25 % eller mer, eller som kontrollerar organisationen *<textarea name="owners" rows="3" required></textarea></label><label>Förbindelser med andra medlemmar eller med initiativtagaren (ägare, styrelse, finansiering, avtal), eller &quot;inga&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Ett testfall ni skulle bidra med <span class="muted">(frivilligt)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Vad ni arbetar med *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Produkter och metoder att redovisa *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Verkliga huvudmän med 25 % eller mer, eller som kontrollerar organisationen *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Förbindelser med andra medlemmar eller med initiativtagaren (ägare, styrelse, finansiering, avtal), eller &quot;inga&quot; *<textarea name="relations" rows="3" required></textarea></label><label>Ett testfall ni skulle bidra med <span class="muted">(frivilligt)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Önskat betalningssätt <span class="muted">(frivilligt)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU på Ethereum)</option><option value="1">Banköverföring, när kontot är öppnat</option><option value="2">Bitcoin, när det är tillgängligt</option><option value="3">PayPal</option></select></label>
 <label>Övrigt <span class="muted">(frivilligt)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

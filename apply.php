@@ -45,11 +45,15 @@ $lang = in_array($_POST['lang'] ?? '', LANGS, true) ? $_POST['lang'] : 'en';
 $t0 = (int)($_POST['t0'] ?? 0);
 if (clean('website2') !== '' || $t0 === 0 || (microtime(true) * 1000 - $t0) < 3000) { back($lang, 'sent=1'); }
 
-$req = ['org', 'legal_form', 'country', 'city', 'web', 'name', 'role', 'email', 'work', 'products', 'owners', 'relations'];
-$a = [];
-foreach (array_merge($req, ['uid', 'phone', 'testcase', 'note']) as $k) { $a[$k] = clean($k); }
-$a['category'] = in_array($_POST['category'] ?? '', ['member', 'observer'], true) ? $_POST['category'] : '';
-$size = filter_var($_POST['size'] ?? '', FILTER_VALIDATE_INT, ['options' => ['min_range' => 0, 'max_range' => count(SIZES) - 1]]);
+// Individuals use a short form: they join as observers (Art. 5 of the statutes) in the individual fee category.
+$individual = ($_POST['kind'] ?? '') === 'individual';
+$all = ['org', 'legal_form', 'country', 'city', 'web', 'name', 'role', 'email', 'work', 'products', 'owners', 'relations'];
+$req = $individual ? ['country', 'city', 'name', 'email', 'work'] : $all;
+$a = ['kind' => $individual ? 'individual' : 'organisation'];
+foreach (array_merge($all, ['uid', 'phone', 'testcase', 'note']) as $k) { $a[$k] = clean($k); }
+if ($individual && $a['org'] === '') { $a['org'] = $a['name'] . ' (individual)'; }
+$a['category'] = $individual ? 'observer' : (in_array($_POST['category'] ?? '', ['member', 'observer'], true) ? $_POST['category'] : '');
+$size = $individual ? 0 : filter_var($_POST['size'] ?? '', FILTER_VALIDATE_INT, ['options' => ['min_range' => 0, 'max_range' => count(SIZES) - 1]]);
 $pay = filter_var($_POST['pay'] ?? '', FILTER_VALIDATE_INT, ['options' => ['min_range' => 0, 'max_range' => count(PAYS) - 1]]);
 $a['size'] = $size === false ? '' : SIZES[$size];
 $a['pay'] = $pay === false ? '' : PAYS[$pay];

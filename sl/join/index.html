@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="sl">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Prijavljam se kot</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> organizacija</label>
+<label class="check"><input type="radio" name="kind" value="individual"> posameznik (kratek obrazec)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Organizacija</legend>
-<label>Pravno ime *<input type="text" name="org" required></label><label>Pravna oblika *<input type="text" name="legal_form" required></label><label>Država *<input type="text" name="country" required></label><label>Sedež (mesto) *<input type="text" name="city" required></label><label>Matična številka <span class="muted">(neobvezno)</span><input type="text" name="uid"></label><label>Spletna stran *<input type="url" name="web" required></label>
+<label class="org-only">Pravno ime *<input type="text" name="org" required></label><label class="org-only">Pravna oblika *<input type="text" name="legal_form" required></label><label>Država *<input type="text" name="country" required></label><label>Sedež (mesto) *<input type="text" name="city" required></label><label class="org-only">Matična številka <span class="muted">(neobvezno)</span><input type="text" name="uid"></label><label class="org-only">Spletna stran *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Zastopnik</legend>
-<label>Ime in priimek *<input type="text" name="name" required></label><label>Funkcija v organizaciji *<input type="text" name="role" required></label><label>E-pošta *<input type="email" name="email" required></label><label>Telefon <span class="muted">(neobvezno)</span><input type="tel" name="phone"></label>
+<label>Ime in priimek *<input type="text" name="name" required></label><label class="org-only">Funkcija v organizaciji *<input type="text" name="role" required></label><label>E-pošta *<input type="email" name="email" required></label><label>Telefon <span class="muted">(neobvezno)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Članstvo</legend>
-<label>Kategorija *<select name="category" required><option value="member">Član (organizacija, z glasovalno pravico)</option><option value="observer">Opazovalec (oseba ali organ, brez glasovalne pravice)</option></select></label>
-<label>Velikost in letna članarina (CHF) *<select name="size" required><option value="0">Posameznik (opazovalec): 100</option><option value="1">Do 5 zaposlenih, neprofitna organizacija, univerza: 300</option><option value="2">6 do 19 zaposlenih: 800</option><option value="3">20 do 49 zaposlenih: 1 500</option><option value="4">50 do 249 zaposlenih: 3 000</option><option value="5">250 do 999 zaposlenih: 5 000</option><option value="6">Strateški član, 1 000 do 9 999 zaposlenih: 50 000</option><option value="7">Strateški član, 10 000 zaposlenih ali več: od 100 000, po dogovoru</option></select></label>
+<label class="org-only">Kategorija *<select name="category" required><option value="member">Član (organizacija, z glasovalno pravico)</option><option value="observer">Opazovalec (oseba ali organ, brez glasovalne pravice)</option></select></label>
+<label class="org-only">Velikost in letna članarina (CHF) *<select name="size" required><option value="0">Posameznik (opazovalec): 100</option><option value="1">Do 5 zaposlenih, neprofitna organizacija, univerza: 300</option><option value="2">6 do 19 zaposlenih: 800</option><option value="3">20 do 49 zaposlenih: 1 500</option><option value="4">50 do 249 zaposlenih: 3 000</option><option value="5">250 do 999 zaposlenih: 5 000</option><option value="6">Strateški član, 1 000 do 9 999 zaposlenih: 50 000</option><option value="7">Strateški član, 10 000 zaposlenih ali več: od 100 000, po dogovoru</option></select></label>
 <p class="muted">Nimate denarja za članarino? Prijavite se vseeno. V zadnjem polju opišite svoj prostovoljni, strokovni ali ustvarjalni prispevek ali preprosto prosite za podporo. Upravni odbor vsako prijavo resno obravnava.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Radi bi bili tudi podporni član (od CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Prosimo za znižano članarino (pojasnite spodaj)</label>
 </fieldset>
 <fieldset><legend>Dejavnost in izjave</legend>
-<label>S čim se ukvarjate *<textarea name="work" rows="3" required></textarea></label><label>Izdelki in metode za razkritje *<textarea name="products" rows="3" required></textarea></label><label>Dejanski lastniki z deležem 25 % ali več ali tisti, ki nadzorujejo organizacijo *<textarea name="owners" rows="3" required></textarea></label><label>Povezave z drugimi člani ali s pobudnikom (lastniki, vodstvo, financiranje, pogodbe) ali »nobene« *<textarea name="relations" rows="3" required></textarea></label><label>Testni primer, ki bi ga prinesli <span class="muted">(neobvezno)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>S čim se ukvarjate *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Izdelki in metode za razkritje *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Dejanski lastniki z deležem 25 % ali več ali tisti, ki nadzorujejo organizacijo *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Povezave z drugimi člani ali s pobudnikom (lastniki, vodstvo, financiranje, pogodbe) ali »nobene« *<textarea name="relations" rows="3" required></textarea></label><label>Testni primer, ki bi ga prinesli <span class="muted">(neobvezno)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Želeni način plačila <span class="muted">(neobvezno)</span><select name="pay"><option value=""></option><option value="0">Stablecoin (USDT, USDC, EURC, EURAU, CHFAU na Ethereumu)</option><option value="1">Bančno nakazilo, ko bo račun odprt</option><option value="2">Bitcoin, ko bo na voljo</option><option value="3">PayPal</option></select></label>
 <label>Drugo <span class="muted">(neobvezno)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

@@ -48,22 +48,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="be">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>Я падаю заяўку як</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> арганізацыя</label>
+<label class="check"><input type="radio" name="kind" value="individual"> прыватная асоба (кароткая форма)</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Арганізацыя</legend>
-<label>Юрыдычная назва *<input type="text" name="org" required></label><label>Прававая форма *<input type="text" name="legal_form" required></label><label>Краіна *<input type="text" name="country" required></label><label>Месцазнаходжанне (горад) *<input type="text" name="city" required></label><label>Рэгістрацыйны нумар <span class="muted">(неабавязкова)</span><input type="text" name="uid"></label><label>Сайт *<input type="url" name="web" required></label>
+<label class="org-only">Юрыдычная назва *<input type="text" name="org" required></label><label class="org-only">Прававая форма *<input type="text" name="legal_form" required></label><label>Краіна *<input type="text" name="country" required></label><label>Месцазнаходжанне (горад) *<input type="text" name="city" required></label><label class="org-only">Рэгістрацыйны нумар <span class="muted">(неабавязкова)</span><input type="text" name="uid"></label><label class="org-only">Сайт *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>Прадстаўнік</legend>
-<label>Поўнае імя *<input type="text" name="name" required></label><label>Пасада ў арганізацыі *<input type="text" name="role" required></label><label>Электронная пошта *<input type="email" name="email" required></label><label>Тэлефон <span class="muted">(неабавязкова)</span><input type="tel" name="phone"></label>
+<label>Поўнае імя *<input type="text" name="name" required></label><label class="org-only">Пасада ў арганізацыі *<input type="text" name="role" required></label><label>Электронная пошта *<input type="email" name="email" required></label><label>Тэлефон <span class="muted">(неабавязкова)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>Членства</legend>
-<label>Катэгорыя *<select name="category" required><option value="member">Удзельнік (арганізацыя, з правам голасу)</option><option value="observer">Назіральнік (асоба ці орган, без права голасу)</option></select></label>
-<label>Памер і гадавы ўнёсак (CHF) *<select name="size" required><option value="0">Прыватная асоба (назіральнік): 100</option><option value="1">Да 5 супрацоўнікаў, некамерцыйная арганізацыя, універсітэт: 300</option><option value="2">Ад 6 да 19 супрацоўнікаў: 800</option><option value="3">Ад 20 да 49 супрацоўнікаў: 1 500</option><option value="4">Ад 50 да 249 супрацоўнікаў: 3 000</option><option value="5">Ад 250 да 999 супрацоўнікаў: 5 000</option><option value="6">Стратэгічны ўдзельнік, ад 1 000 да 9 999 супрацоўнікаў: 50 000</option><option value="7">Стратэгічны ўдзельнік, ад 10 000 супрацоўнікаў: ад 100 000, па дамоўленасці</option></select></label>
+<label class="org-only">Катэгорыя *<select name="category" required><option value="member">Удзельнік (арганізацыя, з правам голасу)</option><option value="observer">Назіральнік (асоба ці орган, без права голасу)</option></select></label>
+<label class="org-only">Памер і гадавы ўнёсак (CHF) *<select name="size" required><option value="0">Прыватная асоба (назіральнік): 100</option><option value="1">Да 5 супрацоўнікаў, некамерцыйная арганізацыя, універсітэт: 300</option><option value="2">Ад 6 да 19 супрацоўнікаў: 800</option><option value="3">Ад 20 да 49 супрацоўнікаў: 1 500</option><option value="4">Ад 50 да 249 супрацоўнікаў: 3 000</option><option value="5">Ад 250 да 999 супрацоўнікаў: 5 000</option><option value="6">Стратэгічны ўдзельнік, ад 1 000 да 9 999 супрацоўнікаў: 50 000</option><option value="7">Стратэгічны ўдзельнік, ад 10 000 супрацоўнікаў: ад 100 000, па дамоўленасці</option></select></label>
 <p class="muted">Няма грошай на ўнёсак? Падавайце заяўку ўсё роўна. У апошнім полі апішыце свой валанцёрскі, прафесійны ці творчы ўклад або проста папрасіце пра падтрымку. Праўленне сур&#x27;ёзна разглядае кожную заяўку.</p>
 <label class="check"><input type="checkbox" name="support" value="1"> Мы таксама хацелі б стаць падтрымліваючым удзельнікам (ад CHF 20 000)</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> Мы просім знізіць унёсак (растлумачце ніжэй)</label>
 </fieldset>
 <fieldset><legend>Дзейнасць і заявы</legend>
-<label>Над чым вы працуеце *<textarea name="work" rows="3" required></textarea></label><label>Прадукты і метады для раскрыцця *<textarea name="products" rows="3" required></textarea></label><label>Бенефіцыяры з доляй 25 % або больш ці тыя, хто кантралюе арганізацыю *<textarea name="owners" rows="3" required></textarea></label><label>Сувязі з іншымі ўдзельнікамі або з ініцыятарам (уладальнікі, кіраўнікі, фінансаванне, дагаворы) або «няма» *<textarea name="relations" rows="3" required></textarea></label><label>Тэставы выпадак, які вы б прынеслі <span class="muted">(неабавязкова)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>Над чым вы працуеце *<textarea name="work" rows="3" required></textarea></label><label class="org-only">Прадукты і метады для раскрыцця *<textarea name="products" rows="3" required></textarea></label><label class="org-only">Бенефіцыяры з доляй 25 % або больш ці тыя, хто кантралюе арганізацыю *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">Сувязі з іншымі ўдзельнікамі або з ініцыятарам (уладальнікі, кіраўнікі, фінансаванне, дагаворы) або «няма» *<textarea name="relations" rows="3" required></textarea></label><label>Тэставы выпадак, які вы б прынеслі <span class="muted">(неабавязкова)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>Пажаданы спосаб аплаты <span class="muted">(неабавязкова)</span><select name="pay"><option value=""></option><option value="0">Стэйблкоін (USDT, USDC, EURC, EURAU, CHFAU у Ethereum)</option><option value="1">Банкаўскі перавод, калі рахунак будзе адкрыты</option><option value="2">Bitcoin, калі будзе даступны</option><option value="3">PayPal</option></select></label>
 <label>Іншае <span class="muted">(неабавязкова)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -74,6 +78,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>

@@ -47,22 +47,26 @@
 <form class="apply" method="post" action="/apply.php">
 <input type="hidden" name="lang" value="ja">
 <input type="hidden" name="t0" value="">
+<fieldset><legend>申請の区分</legend>
+<label class="check"><input type="radio" name="kind" value="org" checked> 組織</label>
+<label class="check"><input type="radio" name="kind" value="individual"> 個人（簡易フォーム）</label>
+</fieldset>
 <div class="hp" aria-hidden="true"><label>Leave empty<input type="text" name="website2" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>組織</legend>
-<label>正式名称 *<input type="text" name="org" required></label><label>法的形態 *<input type="text" name="legal_form" required></label><label>国 *<input type="text" name="country" required></label><label>所在地（都市）*<input type="text" name="city" required></label><label>登記番号 <span class="muted">(任意)</span><input type="text" name="uid"></label><label>ウェブサイト *<input type="url" name="web" required></label>
+<label class="org-only">正式名称 *<input type="text" name="org" required></label><label class="org-only">法的形態 *<input type="text" name="legal_form" required></label><label>国 *<input type="text" name="country" required></label><label>所在地（都市）*<input type="text" name="city" required></label><label class="org-only">登記番号 <span class="muted">(任意)</span><input type="text" name="uid"></label><label class="org-only">ウェブサイト *<input type="url" name="web" required></label>
 </fieldset>
 <fieldset><legend>代表者</legend>
-<label>氏名 *<input type="text" name="name" required></label><label>組織での役職 *<input type="text" name="role" required></label><label>電子メール *<input type="email" name="email" required></label><label>電話 <span class="muted">(任意)</span><input type="tel" name="phone"></label>
+<label>氏名 *<input type="text" name="name" required></label><label class="org-only">組織での役職 *<input type="text" name="role" required></label><label>電子メール *<input type="email" name="email" required></label><label>電話 <span class="muted">(任意)</span><input type="tel" name="phone"></label>
 </fieldset>
 <fieldset><legend>メンバーシップ</legend>
-<label>区分 *<select name="category" required><option value="member">メンバー（組織、議決権あり）</option><option value="observer">オブザーバー（個人または機関、議決権なし）</option></select></label>
-<label>規模と年会費（CHF）*<select name="size" required><option value="0">個人（オブザーバー）：100</option><option value="1">5人以下、非営利、大学：300</option><option value="2">6〜19人：800</option><option value="3">20〜49人：1,500</option><option value="4">50〜249人：3,000</option><option value="5">250〜999人：5,000</option><option value="6">戦略会員、1,000〜9,999人：50,000</option><option value="7">戦略会員、10,000人以上：100,000 から、協議により</option></select></label>
+<label class="org-only">区分 *<select name="category" required><option value="member">メンバー（組織、議決権あり）</option><option value="observer">オブザーバー（個人または機関、議決権なし）</option></select></label>
+<label class="org-only">規模と年会費（CHF）*<select name="size" required><option value="0">個人（オブザーバー）：100</option><option value="1">5人以下、非営利、大学：300</option><option value="2">6〜19人：800</option><option value="3">20〜49人：1,500</option><option value="4">50〜249人：3,000</option><option value="5">250〜999人：5,000</option><option value="6">戦略会員、1,000〜9,999人：50,000</option><option value="7">戦略会員、10,000人以上：100,000 から、協議により</option></select></label>
 <p class="muted">会費を払うお金がありませんか？それでも申請してください。最後の欄に、ボランティア、専門的、または創造的な貢献を記入するか、単に支援をお願いしてください。理事会はすべての申請を真剣に検討します。</p>
 <label class="check"><input type="checkbox" name="support" value="1"> 賛助会員にもなりたい（CHF 20,000 から）</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> 会費の減額を申請します（下に理由を記入）</label>
 </fieldset>
 <fieldset><legend>活動と申告</legend>
-<label>取り組んでいる分野 *<textarea name="work" rows="3" required></textarea></label><label>申告する製品と手法 *<textarea name="products" rows="3" required></textarea></label><label>25 % 以上を保有する、または組織を支配する実質的支配者 *<textarea name="owners" rows="3" required></textarea></label><label>他のメンバーまたは発起人との関係（所有者、役員、資金、契約）、なければ「なし」*<textarea name="relations" rows="3" required></textarea></label><label>持ち込みたいテストケース <span class="muted">(任意)</span><textarea name="testcase" rows="3"></textarea></label>
+<label>取り組んでいる分野 *<textarea name="work" rows="3" required></textarea></label><label class="org-only">申告する製品と手法 *<textarea name="products" rows="3" required></textarea></label><label class="org-only">25 % 以上を保有する、または組織を支配する実質的支配者 *<textarea name="owners" rows="3" required></textarea></label><label class="org-only">他のメンバーまたは発起人との関係（所有者、役員、資金、契約）、なければ「なし」*<textarea name="relations" rows="3" required></textarea></label><label>持ち込みたいテストケース <span class="muted">(任意)</span><textarea name="testcase" rows="3"></textarea></label>
 <label>希望する支払方法 <span class="muted">(任意)</span><select name="pay"><option value=""></option><option value="0">ステーブルコイン（Ethereum 上の USDT、USDC、EURC、EURAU、CHFAU）</option><option value="1">銀行振込（口座開設後）</option><option value="2">ビットコイン（対応後）</option><option value="3">PayPal</option></select></label>
 <label>その他 <span class="muted">(任意)</span><textarea name="note" rows="3"></textarea></label>
 </fieldset>
@@ -73,6 +77,10 @@
 </form>
 <script>
 document.querySelector('input[name=t0]').value=Date.now();
+function kind(){var ind=document.querySelector('input[name=kind][value=individual]').checked;
+document.querySelectorAll('.org-only').forEach(function(l){l.hidden=ind;l.querySelectorAll('input,textarea,select').forEach(function(f){if(f.hasAttribute('required')||f.dataset.req){f.dataset.req=1;f.required=!ind;}});});
+if(ind){document.querySelector('select[name=category]').value='observer';document.querySelector('select[name=size]').value='0';}}
+document.querySelectorAll('input[name=kind]').forEach(function(r){r.addEventListener('change',kind);});
 var q=location.search;if(q.indexOf('sent=1')>=0){document.querySelector('.ok-msg').hidden=false;document.querySelector('form.apply').hidden=true;}
 if(q.indexOf('error=1')>=0)document.querySelector('.err-msg').hidden=false;
 </script>
