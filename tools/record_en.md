@@ -20,4 +20,5 @@ The German Basic Law begins: "Human dignity shall be inviolable. To respect and 
 We live in an abundance that earlier generations built. We want to pass on a message with it: live better, more consciously and with more grace, and create good for the whole community of civilisation. The public record is how we keep our word.
 
 ## 6. Status
-The public repository of OVAIC is being set up. Its address will appear here.
+The public repository of OVAIC: https://github.com/Ovaic-Org/ovaic.org
+Proposals: https://github.com/Ovaic-Org/ovaic.org/issues and https://github.com/Ovaic-Org/ovaic.org/pulls

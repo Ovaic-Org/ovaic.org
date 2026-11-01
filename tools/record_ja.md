@@ -20,4 +20,5 @@ OVAICが決定し公開するすべてのことは公開の場で記録され、
 私たちは、先の世代が築いた豊かさの中で生きています。その豊かさとともに、一つのメッセージを手渡したいと考えます。より良く、より意識的に、より品位をもって生き、文明の共同体全体のために善を生み出してほしい、と。公開記録は、私たちが約束を守るための方法です。
 
 ## 6. 現状
-OVAICの公開リポジトリは準備中です。アドレスはここに掲載されます。
+OVAICの公開リポジトリ：https://github.com/Ovaic-Org/ovaic.org
+提案：https://github.com/Ovaic-Org/ovaic.org/issues および https://github.com/Ovaic-Org/ovaic.org/pulls

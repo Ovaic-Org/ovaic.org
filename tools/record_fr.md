@@ -20,4 +20,5 @@ La Loi fondamentale allemande commence ainsi : « La dignité de l'être humain 
 Nous vivons dans une abondance que les générations précédentes ont construite. Nous voulons transmettre avec elle un message : vivre mieux, plus consciemment et avec plus de grâce, et créer le bien pour toute la communauté de la civilisation. Le registre public est notre manière de tenir parole.
 
 ## 6. État
-Le dépôt public d'OVAIC est en cours de création. Son adresse figurera ici.
+Le dépôt public d'OVAIC : https://github.com/Ovaic-Org/ovaic.org
+Propositions : https://github.com/Ovaic-Org/ovaic.org/issues et https://github.com/Ovaic-Org/ovaic.org/pulls

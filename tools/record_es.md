@@ -20,4 +20,5 @@ La Ley Fundamental alemana empieza así: «La dignidad humana es intangible. Res
 Vivimos en una abundancia que construyeron las generaciones anteriores. Con ella queremos transmitir un mensaje: vivir mejor, con más conciencia y más dignidad, y crear el bien para toda la comunidad de la civilización. El registro público es la forma en que cumplimos nuestra palabra.
 
 ## 6. Estado
-El repositorio público de OVAIC se está creando. Su dirección aparecerá aquí.
+El repositorio público de OVAIC: https://github.com/Ovaic-Org/ovaic.org
+Propuestas: https://github.com/Ovaic-Org/ovaic.org/issues y https://github.com/Ovaic-Org/ovaic.org/pulls

@@ -20,4 +20,5 @@ La Legge fondamentale tedesca si apre così: «La dignità dell'uomo è intangib
 Viviamo in un'abbondanza costruita dalle generazioni precedenti. Con essa vogliamo trasmettere un messaggio: vivere meglio, con più consapevolezza e più grazia, e creare il bene per l'intera comunità della civiltà. Il registro pubblico è il modo in cui manteniamo la parola.
 
 ## 6. Stato
-Il repository pubblico di OVAIC è in preparazione. Il suo indirizzo apparirà qui.
+Il repository pubblico di OVAIC: https://github.com/Ovaic-Org/ovaic.org
+Proposte: https://github.com/Ovaic-Org/ovaic.org/issues e https://github.com/Ovaic-Org/ovaic.org/pulls

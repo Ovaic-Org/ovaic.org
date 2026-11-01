@@ -20,4 +20,5 @@ Das Grundgesetz beginnt mit den Worten: „Die Würde des Menschen ist unantastb
 Wir leben in einem Wohlstand, den frühere Generationen aufgebaut haben. Wir wollen mit ihm eine Botschaft weitergeben: besser, bewusster und würdevoller zu leben und Gutes für die ganze zivilisatorische Gemeinschaft zu schaffen. Das öffentliche Register ist der Weg, wie wir unser Wort halten.
 
 ## 6. Stand
-Das öffentliche Repository von OVAIC wird eingerichtet. Seine Adresse erscheint hier.
+Das öffentliche Repository von OVAIC: https://github.com/Ovaic-Org/ovaic.org
+Vorschläge: https://github.com/Ovaic-Org/ovaic.org/issues und https://github.com/Ovaic-Org/ovaic.org/pulls
