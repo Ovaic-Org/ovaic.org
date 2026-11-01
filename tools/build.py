@@ -5,7 +5,7 @@ import re
 
 from people import BOARD, FOUNDED, MEMBERS, OCT, P
 from texts import T
-from open_texts import OPEN
+from open_texts import JOIN, OPEN
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TOOLS = ROOT / "tools"
@@ -371,6 +371,7 @@ def join(lang):
 <fieldset><legend>{E(t['sec_mem'])}</legend>
 <label>{E(t['f_cat'])}<select name="category" required><option value="member">{E(t['cat_member'])}</option><option value="observer">{E(t['cat_observer'])}</option></select></label>
 <label>{E(t['f_size'])}<select name="size" required>{sizes}</select></label>
+<p class="muted">{E(JOIN[lang])}</p>
 <label class="check"><input type="checkbox" name="support" value="1"> {E(t['f_support'])}</label>
 <label class="check"><input type="checkbox" name="reduce" value="1"> {E(t['f_reduce'])}</label>
 </fieldset>

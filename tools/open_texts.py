@@ -90,3 +90,29 @@ OPEN = {
            "우리는 형이상학과 마케팅을 검증할 수 있는 과학과 구분합니다. 사이비 과학, 어떤 대가를 치르더라도 명성을 얻으려는 욕망, 그리고 이 공동의 일을 사적인 사업으로 바꾸려는 시도를 함께 가려냅니다. 여기서 돈은 아무것도 결정하지 않습니다. 남는 것은 검증과 신뢰, 그리고 다음 세대를 위한 좋은 일입니다.",
            "각서 제5절"),
 }
+
+# Application form: joining without money (shown under the fee category, all languages).
+JOIN = {
+    "en": "No money for the fee? Apply all the same. In the last field, describe your voluntary, professional or creative contribution, or simply ask for support. The Board considers every application seriously.",
+    "de": "Kein Geld für den Beitrag? Bewerben Sie sich trotzdem. Beschreiben Sie im letzten Feld Ihren freiwilligen, beruflichen oder schöpferischen Beitrag, oder bitten Sie einfach um Unterstützung. Der Vorstand prüft jede Bewerbung ernsthaft.",
+    "fr": "Pas d'argent pour la cotisation ? Posez votre candidature quand même. Dans le dernier champ, décrivez votre contribution bénévole, professionnelle ou créative, ou demandez simplement un soutien. Le comité examine chaque candidature avec sérieux.",
+    "it": "Niente denaro per la quota? Candidatevi comunque. Nell'ultimo campo descrivete il vostro contributo volontario, professionale o creativo, oppure chiedete semplicemente sostegno. Il comitato esamina ogni candidatura con serietà.",
+    "es": "¿Sin dinero para la cuota? Solicite el ingreso igualmente. En el último campo describa su contribución voluntaria, profesional o creativa, o simplemente pida apoyo. La junta estudia cada solicitud con seriedad.",
+    "pt": "Sem dinheiro para a quota? Candidate-se na mesma. No último campo, descreva a sua contribuição voluntária, profissional ou criativa, ou peça simplesmente apoio. A direção analisa cada candidatura com seriedade.",
+    "ru": "Нет денег на взнос? Подавайте заявку всё равно. В последнем поле опишите свой волонтёрский, профессиональный или творческий вклад или просто попросите о поддержке. Правление серьёзно рассматривает каждую заявку.",
+    "uk": "Немає грошей на внесок? Подавайте заявку все одно. В останньому полі опишіть свій волонтерський, професійний чи творчий внесок або просто попросіть про підтримку. Правління серйозно розглядає кожну заявку.",
+    "be": "Няма грошай на ўнёсак? Падавайце заяўку ўсё роўна. У апошнім полі апішыце свой валанцёрскі, прафесійны ці творчы ўклад або проста папрасіце пра падтрымку. Праўленне сур'ёзна разглядае кожную заяўку.",
+    "pl": "Brak pieniędzy na składkę? Złóż wniosek mimo to. W ostatnim polu opisz swój wkład wolontariacki, zawodowy lub twórczy albo po prostu poproś o wsparcie. Zarząd poważnie rozpatruje każdy wniosek.",
+    "cs": "Nemáte peníze na příspěvek? Přihlaste se přesto. V posledním poli popište svůj dobrovolnický, odborný nebo tvůrčí přínos, nebo jednoduše požádejte o podporu. Představenstvo každou přihlášku vážně posoudí.",
+    "sk": "Nemáte peniaze na príspevok? Prihláste sa aj tak. V poslednom poli opíšte svoj dobrovoľnícky, odborný alebo tvorivý prínos, alebo jednoducho požiadajte o podporu. Predstavenstvo každú prihlášku vážne posúdi.",
+    "sl": "Nimate denarja za članarino? Prijavite se vseeno. V zadnjem polju opišite svoj prostovoljni, strokovni ali ustvarjalni prispevek ali preprosto prosite za podporo. Upravni odbor vsako prijavo resno obravnava.",
+    "sr": "Немате новца за чланарину? Пријавите се ипак. У последњем пољу опишите свој волонтерски, стручни или стваралачки допринос, или једноставно затражите подршку. Управни одбор озбиљно разматра сваку пријаву.",
+    "hu": "Nincs pénze a tagdíjra? Jelentkezzen így is. Az utolsó mezőben írja le önkéntes, szakmai vagy alkotó hozzájárulását, vagy egyszerűen kérjen támogatást. Az elnökség minden jelentkezést komolyan mérlegel.",
+    "lv": "Nav naudas biedra naudai? Piesakieties tik un tā. Pēdējā laukā aprakstiet savu brīvprātīgo, profesionālo vai radošo ieguldījumu vai vienkārši lūdziet atbalstu. Valde katru pieteikumu izskata nopietni.",
+    "lt": "Neturite pinigų mokesčiui? Vis tiek teikite paraišką. Paskutiniame laukelyje aprašykite savo savanorišką, profesinį ar kūrybinį indėlį arba tiesiog paprašykite paramos. Valdyba kiekvieną paraišką svarsto rimtai.",
+    "et": "Pole raha liikmemaksuks? Kandideerige ikkagi. Kirjeldage viimasel väljal oma vabatahtlikku, erialast või loomingulist panust või paluge lihtsalt toetust. Juhatus arutab iga avaldust tõsiselt.",
+    "sv": "Inga pengar till avgiften? Ansök ändå. Beskriv i det sista fältet ditt frivilliga, yrkesmässiga eller kreativa bidrag, eller be helt enkelt om stöd. Styrelsen prövar varje ansökan på allvar.",
+    "no": "Ingen penger til kontingenten? Søk likevel. Beskriv i det siste feltet ditt frivillige, faglige eller kreative bidrag, eller be ganske enkelt om støtte. Styret behandler hver søknad med alvor.",
+    "ja": "会費を払うお金がありませんか？それでも申請してください。最後の欄に、ボランティア、専門的、または創造的な貢献を記入するか、単に支援をお願いしてください。理事会はすべての申請を真剣に検討します。",
+    "ko": "회비를 낼 돈이 없으신가요? 그래도 신청하세요. 마지막 칸에 자원봉사, 전문적 또는 창의적 기여를 적거나 그냥 지원을 요청하세요. 이사회는 모든 신청을 진지하게 검토합니다.",
+}
