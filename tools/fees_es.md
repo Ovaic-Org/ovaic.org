@@ -13,7 +13,7 @@
 - **Un voto por miembro**, sea cual sea la cuota.
 - El número de personas incluye las sociedades bajo control común.
 - Admisión en el segundo semestre: media cuota ese año.
-- A petición escrita, la Junta puede reducir o condonar una cuota. Cada petición se estudia con seriedad y recibe respuesta por escrito. Cuando una cuota no puede pagarse, una idea, una contribución de trabajo o una petición de apoyo pueden ocupar su lugar (Memorando, sección 5).
+- A petición escrita, la Junta puede reducir o condonar una cuota. Cada petición se estudia con seriedad y recibe respuesta por escrito. Cuando una cuota no puede pagarse, una idea, una contribución de trabajo o una petición de apoyo pueden ocupar su lugar (Memorando, sección 5). En particular, una persona que no pueda pagar la cuota de CHF 100 puede solicitar el ingreso igualmente; la junta estudia la solicitud sobre la base de su contribución intelectual, creativa o de utilidad pública.
 - Las cuentas anuales se publican; las contribuciones de más de CHF 10 000 se publican con el nombre del donante.
 - Los anticipos de gastos solo se hacen mediante préstamo escrito sin intereses o donación sin condiciones, publicados y sin derechos.
 - Texto completo: versión inglesa, que es la vinculante.

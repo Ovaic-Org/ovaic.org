@@ -13,7 +13,7 @@
 - **Une voix par membre**, quel que soit le montant de la cotisation.
 - Le nombre de personnes comprend les sociétés sous contrôle commun.
 - Admission au second semestre : demi-cotisation pour cette année.
-- Sur demande écrite, le comité peut réduire ou supprimer une cotisation. Chaque demande est examinée avec sérieux et reçoit une réponse écrite. Lorsqu'une cotisation ne peut être payée, une idée, une contribution en travail ou une demande de soutien peut en tenir lieu (Mémorandum, section 5).
+- Sur demande écrite, le comité peut réduire ou supprimer une cotisation. Chaque demande est examinée avec sérieux et reçoit une réponse écrite. Lorsqu'une cotisation ne peut être payée, une idée, une contribution en travail ou une demande de soutien peut en tenir lieu (Mémorandum, section 5). En particulier, une personne qui ne peut pas payer la cotisation de CHF 100 peut tout de même poser sa candidature ; le comité l'examine sur la base de sa contribution intellectuelle, créative ou d'utilité publique.
 - Les comptes annuels sont publiés ; les contributions de plus de CHF 10 000 sont publiées avec le nom du donateur.
 - Les avances de frais ne se font que par prêt écrit sans intérêt ou par don sans conditions, publiés et sans droits.
 - Texte complet : version anglaise, qui fait foi.

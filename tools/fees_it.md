@@ -13,7 +13,7 @@
 - **Un voto per membro**, qualunque sia la quota.
 - Il numero di persone comprende le società sotto controllo comune.
 - Ammissione nel secondo semestre: metà quota per quell'anno.
-- Su richiesta scritta il comitato può ridurre o condonare una quota. Ogni richiesta è esaminata con serietà e riceve una risposta scritta. Quando una quota non può essere pagata, un'idea, un contributo di lavoro o una richiesta di sostegno possono prenderne il posto (Memorandum, sezione 5).
+- Su richiesta scritta il comitato può ridurre o condonare una quota. Ogni richiesta è esaminata con serietà e riceve una risposta scritta. Quando una quota non può essere pagata, un'idea, un contributo di lavoro o una richiesta di sostegno possono prenderne il posto (Memorandum, sezione 5). In particolare, una persona che non può pagare la quota di CHF 100 può candidarsi ugualmente; il comitato esamina la candidatura sulla base del suo contributo intellettuale, creativo o di pubblica utilità.
 - I conti annuali sono pubblicati; i contributi oltre CHF 10 000 sono pubblicati con il nome del donatore.
 - Gli anticipi di spese avvengono solo con prestito scritto senza interessi o donazione senza condizioni, resi pubblici e senza diritti.
 - Testo completo: versione inglese, che fa fede.

@@ -24,7 +24,7 @@ Staff means full time equivalents of the member and of all companies under commo
 Fees are due within 30 days of the invoice for the calendar year. A member admitted in the second half of a calendar year pays half the fee for that year.
 
 ## 5. Reduction and waiver
-On written request the Board may reduce or waive a fee, in particular for a small organisation in a difficult year or for an observer whose contribution is mainly expert work. Each decision is recorded; the annual report lists the number and total of reductions without naming the members. Every request is considered seriously and answered in writing. Where a fee cannot be paid, an idea, a contribution of work or a request for support may stand in its place (Memorandum, section 5).
+On written request the Board may reduce or waive a fee, in particular for a small organisation in a difficult year or for an observer whose contribution is mainly expert work. Each decision is recorded; the annual report lists the number and total of reductions without naming the members. Every request is considered seriously and answered in writing. Where a fee cannot be paid, an idea, a contribution of work or a request for support may stand in its place (Memorandum, section 5). In particular, an individual who cannot pay the CHF 100 fee may apply all the same; the Board considers the application on the basis of the person's intellectual, creative or publicly useful contribution.
 
 ## 6. Contributions in kind
 Strategic and supporting members may pay all or part of their fee in kind, at fair market value agreed in writing with the Board: for example enterprise subscriptions and access to AI models, API and computing credits, engineering time or direct integrations. Contributions in kind:
