@@ -151,7 +151,7 @@ SCRIPT = """<script>
 
 def footer(lang):
     t, b = T[lang], base(lang)
-    return f"""<footer><div class="wrap">OVAIC · Open Verifiable AI Consortium · <a href="{b}charter/">{t['foot_charter']}</a> · <a href="{b}memorandum/">{t['m_short']}</a> · <a href="{b}manifesto/">{MANI.get(lang, MANI['en'])}</a> · <a href="{b}record/">{RECORD.get(lang, RECORD['en'])}</a> · <a href="{b}statutes/">{t['s_short']}</a> · <a href="{b}fees/">{t['f_short']}</a> · <a href="{b}policies/">{t['foot_policies']}</a> · <a href="{b}policies/#disclaimer">{t['foot_disclaimer']}</a> · {MAIL} · {t['foot_track']}</div></footer>
+    return f"""<footer><div class="wrap">OVAIC · Open Verifiable AI Consortium · <a href="{b}charter/">{t['nav'][4]}</a> · <a href="{b}memorandum/">{t['m_short']}</a> · <a href="{b}manifesto/">{MANI.get(lang, MANI['en'])}</a> · <a href="{b}record/">{RECORD.get(lang, RECORD['en'])}</a> · <a href="{b}statutes/">{t['s_short']}</a> · <a href="{b}fees/">{t['f_short']}</a> · <a href="{b}policies/">{t['foot_policies']}</a> · <a href="{b}policies/#disclaimer">{t['foot_disclaimer']}</a> · {MAIL} · {t['foot_track']}</div></footer>
 {SCRIPT}
 </body>
 </html>
